@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+
+    <script src="js/board.js"></script>
+    <script src="js/main.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body onload="getDOMs();display();">
+
+    <script>
+        createBorder();
+        function display() {
+            let output = '<div class="board">';
+            for(var i = 0; i < size; i++) {
+                for(var j = 0; j < size; j++) {
+                    var value = mat[i][j];
+                    if(value == null) value = "";
+                    output += '<span onclick="clicked(' + i + ',' + j + ')">'
+                        + value
+                        + '</span>';
+                }
+            }
+            output += '</div>';
+            main.innerHTML = output;
+
+            if(turn) output = 'X';
+            else output = 'O';
+            turn_show.innerHTML = output;
+        }
+
+    </script>
+
+    <header id="header"><span id="turn_show"></span> Turn</header>
+    <section id="game_status"></section>
+    <main id="main"></main>
+    <footer class="italic">Developed By <a href="http://">Kfir Goldfarb</a></footer>
+    
+</body>
+</html>

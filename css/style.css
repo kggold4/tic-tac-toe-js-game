@@ -1,0 +1,54 @@
+:root {
+    --mainfont: Helvetica;
+    --darkgrey: #333;
+    --darkblue: #2c3e50;
+    --blue: #34495e;
+    --lightblue: #adc2e4;
+}
+
+* {
+    text-align: center;
+    transition: 200ms;
+    font-family: var(--mainfont);
+    margin: auto;
+}
+
+header, section {
+    margin: 50px auto;
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--darkblue);
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 0.8rem;
+}
+
+.board {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: var(--blue);
+    color: #fff;
+    border: 6px solid var(--darkblue);
+    border-radius: 10px;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.board > span {
+    cursor: pointer;
+    border: 6px solid var(--darkblue);
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.italic {
+    font-style: italic;
+}
