@@ -4,6 +4,7 @@
     --darkblue: #2c3e50;
     --blue: #34495e;
     --lightblue: #adc2e4;
+    --red: #a83838;
 }
 
 * {
@@ -51,4 +52,17 @@ footer {
 
 .italic {
     font-style: italic;
+}
+
+.line_container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+}
+
+#line {
+    stroke: greenyellow;
 }

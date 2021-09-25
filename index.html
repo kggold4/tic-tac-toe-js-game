@@ -17,7 +17,7 @@
     <script>
         createBorder();
         function display() {
-            let output = '<div class="board">';
+            let output = '<div class="board" id="board">';
             for(var i = 0; i < size; i++) {
                 for(var j = 0; j < size; j++) {
                     var value = mat[i][j];
@@ -36,7 +36,7 @@
         }
 
     </script>
-
+    <div id="red_line"></div>
     <header id="header"><span id="turn_show"></span> Turn</header>
     <section id="game_status"></section>
     <main id="main"></main>

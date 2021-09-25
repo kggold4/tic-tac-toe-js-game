@@ -1,5 +1,6 @@
 let size = 3;
 let mat = new Array(size);
+let way_of_win = '';
 
 function createBorder() {
     for(var i = 0; i < size; i++) {
@@ -34,8 +35,18 @@ function check() {
             if(mat[i][j] == 'X') counterX++;
             else if(mat[i][j] == 'O') counterO++;
 
-            if(counterX == size) return "X";
-            else if(counterO == size) return "O";
+            if(counterX == size) {
+                if(i == 0) way_of_win = "hrz0";
+                else if(i == 1) way_of_win = "hrz1";
+                else way_of_win = "hrz2";
+                return "X";
+            }
+            else if(counterO == size) {
+                if(i == 0) way_of_win = "hrz0";
+                else if(i == 1) way_of_win = "hrz1";
+                else way_of_win = "hrz2";
+                return "O";
+            }
 
         }
         counterX = 0;
@@ -48,13 +59,24 @@ function check() {
     // checking vertical
     for(var j = 0; j < size; j++) {
         for(var i = 0; i < size; i++) {
+
             if(mat[i][j] == null) continue;
 
             if(mat[i][j] == 'X') counterX++;
             else if(mat[i][j] == 'O') counterO++;
 
-            if(counterX == size) return 'X';
-            else if(counterO == size) return 'O';
+            if(counterX == size) {
+                if(i == 0) way_of_win = "vrt0";
+                else if(i == 1) way_of_win = "vrt1";
+                else way_of_win = "vrt2";
+                return 'X';
+            }
+            else if(counterO == size) {
+                if(i == 0) way_of_win = "vrt0";
+                else if(i == 1) way_of_win = "vrt1";
+                else way_of_win = "vrt2";
+                return 'O';
+            }
         }
         counterX = 0;
         counterO = 0;
@@ -65,27 +87,41 @@ function check() {
 
     // checking diagonal top-left to bottom-right
     for(var i = 0; i < size; i++) {
+
         if(mat[i][i] == null) continue;
 
         if(mat[i][i] == 'X') counterX++;
         else if(mat[i][i] == 'O') counterO++;
 
-        if(counterX == size) return 'X';
-        else if(counterO == size) return 'O';
+        if(counterX == size) {
+            way_of_win = "dig-top-left-to-bottom-right";
+            return 'X';
+        }
+        else if(counterO == size) {
+            way_of_win = "dig-top-left-to-bottom-right";
+            return 'O';
+        }
     }
 
     counterX = 0;
     counterO = 0;
 
-    // checking diagonal top-left to bottom-right
+    // checking diagonal right-left to bottom-left
     for(var i = 0; i < size; i++) {
+        
         if(mat[i][size - i - 1] == null) continue;
 
         if(mat[i][size - i - 1] == 'X') counterX++;
         else if(mat[i][size - i - 1] == 'O') counterO++;
 
-        if(counterX == size) return 'X';
-        else if(counterO == size) return 'O';
+        if(counterX == size) {
+            way_of_win = "right-left-to-bottom-left";
+            return 'X';
+        }
+        else if(counterO == size) {
+            way_of_win = "right-left-to-bottom-left";
+            return 'O';
+        }
     }
 
     // checking if all full without a win
@@ -98,7 +134,10 @@ function check() {
             }
         }
     }
-    if(full) return 'draw';
+    if(full) {
+        way_of_win = "draw";
+        return 'draw';
+    }
 
     return null;
 }
