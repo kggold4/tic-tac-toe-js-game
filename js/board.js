@@ -66,14 +66,15 @@ function check() {
             else if(mat[i][j] == 'O') counterO++;
 
             if(counterX == size) {
-                if(i == 0) way_of_win = "vrt0";
-                else if(i == 1) way_of_win = "vrt1";
+                if(j == 0) way_of_win = "vrt0";
+        
+                else if(j == 1) way_of_win = "vrt1";
                 else way_of_win = "vrt2";
                 return 'X';
             }
             else if(counterO == size) {
-                if(i == 0) way_of_win = "vrt0";
-                else if(i == 1) way_of_win = "vrt1";
+                if(j == 0) way_of_win = "vrt0";
+                else if(j == 1) way_of_win = "vrt1";
                 else way_of_win = "vrt2";
                 return 'O';
             }

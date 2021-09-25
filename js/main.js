@@ -11,6 +11,7 @@ function getDOMs() {
     const game_status = document.getElementById("game_status");
     const turn_show = document.getElementById("turn_show");
     const red_line = document.getElementById("red_line");
+    game_status.style.display = 'none';
 }
 
 function clicked(i, j) {
@@ -48,20 +49,22 @@ function clicked(i, j) {
         default:
             break;
     }
+
+    game_status_output += '<br><input type="button" value="Play Again" class="btn italic" onclick="refresh();">';
+
     if(done) {
-        header.style.display = 'none';
+        game_status.style.display = 'block';
+        header.innerHTML = '.';
+        header.style.color = '#ffffff';
         game_status.innerHTML = game_status_output;
-        game_status.style.color = "green";
+        game_status.style.color = "greenyellow";
         if(s != 'draw') drawLine();
     }
 }
 
 function drawLine() {
 
-
     var rect = board.getBoundingClientRect();
-    console.log(rect.left, rect.top, rect.right, rect.bottom);
-
     let x1_pos = 0;
     let y1_pos = 0;
     let x2_pos = 0;
@@ -120,7 +123,6 @@ function drawLine() {
             break;
         default:
             return;
-            // break;
     }
 
     let output = '<svg class="line_container">\
@@ -130,9 +132,13 @@ function drawLine() {
             y1="' + y1_pos  + 'px' + '"\
             x2="' + x2_pos + 'px' + '"\
             y2="' + y2_pos + 'px' + '"\
-            stroke-width="20"\
+            stroke-width="10"\
             stroke-linejoin="round">\
         </line>\
     </svg>';
     red_line.innerHTML = output;
+}
+
+function refresh() {
+    location.reload();
 }
