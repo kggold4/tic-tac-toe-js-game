@@ -8,6 +8,18 @@ Tic-Tac-Toe game build with pure JavaScript, CSS and HTML.
     <a href="https://www.youtube.com/watch?v=mcjz67BQ-IE"><img src="https://i.ytimg.com/vi/mcjz67BQ-IE/maxresdefault.jpg"></a>
 </p>
 
+## Win the game:
+
+<p align="center">
+    <img src="https://github.com/kggold4/tic-tac-toe-js-game/gifs/x.gif">
+</p>
+
+## Getting a draw:
+
+<p align="center">
+    <img src="https://github.com/kggold4/tic-tac-toe-js-game/gifs/dr.gif">
+</p>
+
 ## To clone this project:
 
 ```
