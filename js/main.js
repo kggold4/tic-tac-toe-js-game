@@ -18,9 +18,8 @@ function clicked(i, j) {
     if(done) return;
     console.log(i, j);
     char = 'X';
-    if(!turn) {
-        char = 'O';
-    }
+    if(!turn) char = 'O';
+    
     let valid = put(i, j, char);
     console.log(valid);
     if(valid) {

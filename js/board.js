@@ -16,7 +16,7 @@ function createBorder() {
 function put(i, j, char) {
     if(i + 1 > size || j + 1 > size + 1) return false;
     else if(mat[i][j] != null) return false;
-    else if(char != 'X' && char != 'O') return false;
+    else if(char != 'X' && char != 'O')  return false;
     else {
         mat[i][j] = char;
         return true;
