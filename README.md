@@ -11,7 +11,7 @@ Tic-Tac-Toe game build with pure JavaScript, CSS and HTML.
 ## Win the game:
 
 <p align="center">
-    <img src="https://github.com/kggold4/tic-tac-toe-js-game/gifs/x.gif">
+    <img src="https://github.com/kggold4/tic-tac-toe-js-game/blob/main/gifs/x.gif">
 </p>
 
 ## Getting a draw:
