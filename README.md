@@ -28,5 +28,5 @@ Tic-Tac-Toe game build with pure JavaScript, CSS and HTML.
 
 
 ```
-git clone https://github.com/kggold4/tic-tac-toe-js-game.git
+git clone https://github.com/kggold4/tic-tac-toe-js-game.git.
 ```
