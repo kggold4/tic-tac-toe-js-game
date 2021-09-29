@@ -27,6 +27,8 @@ Tic-Tac-Toe game build with pure JavaScript, CSS and HTML.
     <img src="https://github.com/kggold4/tic-tac-toe-js-game/blob/main/gifs/draw.gif">
 </p>
 
+<hr>
+
 
 # <i>[See this project code build with Java (without gui)](https://github.com/kggold4/tic-tac-toe-java-game.git)</i>
 
