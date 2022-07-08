@@ -97,3 +97,20 @@ footer {
     background: var(--blue);
     color: white;
 }
+
+/* footer links */
+footer > a {
+    text-decoration: none;
+}
+
+/* footer icons */
+footer > a > img {
+    height: 50px;
+    width: 50px;
+    opacity: 0.6;
+}
+
+/* footer icons hover */
+footer > a > img:hover {
+    opacity: 1.0;
+}
