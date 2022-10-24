@@ -14,6 +14,25 @@ function getDOMs() {
     game_status.style.display = 'none';
 }
 
+function display() {
+    let output = '<div class="board" id="board">';
+    for(var i = 0; i < size; i++) {
+        for(var j = 0; j < size; j++) {
+            var value = mat[i][j];
+            if(value == null) value = "";
+            output += '<span onclick="clicked(' + i + ',' + j + ')">'
+                + value
+                + '</span>';
+        }
+    }
+    output += '</div>';
+    main.innerHTML = output;
+
+    if(turn) output = 'X';
+    else output = 'O';
+    turn_show.innerHTML = output;
+}
+
 function clicked(i, j) {
     if(done) return;
     char = 'X';
@@ -47,16 +66,30 @@ function clicked(i, j) {
             break;
     }
 
-    game_status_output += '<br><input type="button" value="Play Again" class="btn italic" onclick="refresh();">';
+    game_status_output += '<br><input type="button" value="Play Again" class="btn italic" onclick="refresh_game();">';
 
     if(done) {
-        game_status.style.display = 'block';
-        header.innerHTML = '.';
-        header.style.color = '#ffffff';
-        game_status.innerHTML = game_status_output;
-        game_status.style.color = "greenyellow";
+        displayFinalStatus(game_status_output);
         if(s != 'draw') drawLine();
     }
+}
+
+function rePlayGame() {
+    game_status.style.display = "none";
+    game_status.innerHTML = null;
+    header.style.opacity = "1";
+    done = false;
+}
+
+function displayFinalStatus(game_status_output) {
+    game_status.style.display = 'block';
+    game_status.innerHTML = game_status_output;
+    game_status.style.color = "greenyellow";
+    header.style.opacity = '0';
+}
+
+function unDrawLine() {
+    red_line.innerHTML = null;
 }
 
 function drawLine() {
@@ -136,6 +169,9 @@ function drawLine() {
     red_line.innerHTML = output;
 }
 
-function refresh() {
-    location.reload();
+function refresh_game() {
+    rePlayGame();
+    unDrawLine();
+    createBorder();
+    display();
 }

@@ -13,41 +13,22 @@
     <!-- javascript -->
     <script src="js/board.js"></script>
     <script src="js/main.js"></script>
+    <script src="test/test_functions.js"></script>
 
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body onload="getDOMs();display();">
-
-    <script>
-        createBorder();
-        function display() {
-            let output = '<div class="board" id="board">';
-            for(var i = 0; i < size; i++) {
-                for(var j = 0; j < size; j++) {
-                    var value = mat[i][j];
-                    if(value == null) value = "";
-                    output += '<span onclick="clicked(' + i + ',' + j + ')">'
-                        + value
-                        + '</span>';
-                }
-            }
-            output += '</div>';
-            main.innerHTML = output;
-
-            if(turn) output = 'X';
-            else output = 'O';
-            turn_show.innerHTML = output;
-        }
-
-    </script>
+<body onload="getDOMs();createBorder();display();">
 
     <!-- red line -->
     <div id="red_line"></div>
 
     <!-- header - turn show -->
-    <header id="header"><span id="turn_show"></span> Turn</header>
+    <header id="header">
+        <div class="turn"><span id="turn_show"></span> Turn</div>
+        <input type="button" value="↻" onclick="refresh_game()" class="btn" id="refresh_btn">
+    </header>
 
     <!-- game status -->
     <section class="game_status"><div class="game_status_inner" id="game_status"></div></section>

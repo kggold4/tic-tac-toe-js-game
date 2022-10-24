@@ -98,6 +98,10 @@ footer {
     color: white;
 }
 
+.btn:active {
+    background: var(--darkblue);
+}
+
 /* footer links */
 footer > a {
     text-decoration: none;

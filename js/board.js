@@ -1,3 +1,4 @@
+// TODO: Add a way that the user can insert custom size
 let size = 3;
 let mat = new Array(size);
 let way_of_win = '';
