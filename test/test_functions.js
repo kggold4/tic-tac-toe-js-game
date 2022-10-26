@@ -1,3 +1,4 @@
+// get a list with all the empty cells (no 'X' or 'O' has selected)
 function getEmptyCells() {
     let empty_cells = [];
     let current_board = document.getElementById("board");
@@ -10,6 +11,7 @@ function getEmptyCells() {
     return empty_cells;
 }
 
+// play a random game until someone win
 function testRandomPlay() {
     while(!done) {
         let cells_to_click = getEmptyCells();
